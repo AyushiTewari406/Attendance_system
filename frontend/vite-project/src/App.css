@@ -41,6 +41,29 @@ body {
   font-weight: 700;
 }
 
+.tabs,
+.main-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: rgba(52, 152, 219, 0.9);
+  border-color: transparent;
+}
+
 /* Stats Cards */
 .stats {
   display: flex;
@@ -159,6 +182,120 @@ tbody tr:hover {
 .absent {
   background: rgba(231, 76, 60, 0.2);
   color: #e74c3c;
+}
+
+.datewise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.datewise-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.datewise-header label {
+  margin-right: 10px;
+}
+
+input[type="date"] {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.toggle-btn {
+  padding: 6px 14px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.present-btn {
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.absent-btn {
+  background: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-1px);
+}
+
+.history-btn,
+.delete-btn,
+.close-btn,
+.submit-btn {
+  padding: 6px 14px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(52, 152, 219, 0.2);
+  color: #3498db;
+  transition: 0.3s;
+}
+
+.delete-btn {
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.history-btn:hover,
+.delete-btn:hover,
+.close-btn:hover,
+.submit-btn:hover {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 800px;
+  max-width: 95%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  border-radius: 16px;
+  color: white;
+}
+
+.history-stats {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 24px;
+}
+
+.history-table {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.datewise-stats {
+  margin-bottom: 20px;
 }
 
 @keyframes fadeIn {

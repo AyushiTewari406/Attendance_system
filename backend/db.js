@@ -1,9 +1,12 @@
-
-
+require("dotenv").config();
 const mongoose = require("mongoose");
-const mongoURL = "mongodb+srv://ayushitewari2024_db_user:SuM2iYjqaVHnESJS@cluster0.ac7zxnm.mongodb.net/attendanceDB";
 
+const mongoURL = process.env.MONGODB_URL;
 
+if (!mongoURL) {
+  console.error("❌ MONGODB_URL is not set in .env");
+  process.exit(1);
+}
 
 mongoose.connect(mongoURL)
 .then(() => {
