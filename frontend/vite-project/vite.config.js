@@ -5,6 +5,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
+      '/auth': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false
+      },
       '/attendance': {
         target: 'http://localhost:5000',
         changeOrigin: true,
@@ -18,3 +23,4 @@ export default defineConfig({
     }
   }
 })
+
